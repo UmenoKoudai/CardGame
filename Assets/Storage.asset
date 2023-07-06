@@ -12,7 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dfa515939fbc64f9aab7a1a90d4efb, type: 3}
   m_Name: Storage
   m_EditorClassIdentifier: 
-  _cardBase:
-  - _cardType: 0
+  _storage:
+  - _cardType: 1
     _cardImage: {fileID: 0}
     _cost: 0
+    _ability:
+    - rid: -2
+    _condition:
+    - rid: -2
+    _target:
+    - rid: -2
+  - _cardType: 1
+    _cardImage: {fileID: 0}
+    _cost: 0
+    _ability:
+    - rid: -2
+    _condition:
+    - rid: -2
+    _target: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
