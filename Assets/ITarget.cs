@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public interface ITarget
 {
-
+    public abstract void SetTarget();
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 [Serializable]
 public class CardState
 {
+    /// <summary> </summary>
     [SerializeField] CardType _cardType = CardType.Character;
     [SerializeField] Sprite _cardImage;
     [SerializeField] int _cost;

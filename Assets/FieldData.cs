@@ -9,6 +9,15 @@ public class FieldData : MonoBehaviour
     List<CardState> _enemyHand = new List<CardState>();
     List<CardState> _playerField = new List<CardState>();
     List<CardState> _enemyField = new List<CardState>();
+    List<CardState> _target = new List<CardState>();
+    FieldData data;
+
+    protected void Awake(){data = this;}
+    public FieldData Set(){return data;}
+    public void SetTarget(List<CardState> setCard)
+    {
+        _target = setCard;
+    }
 
     public void SetHand(Target target, CardState card)
     {

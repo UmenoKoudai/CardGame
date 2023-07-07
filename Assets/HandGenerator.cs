@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class HandGenerator : FieldData
 {
     [SerializeField] CardStorage _storage;
-    [SerializeField] int _handCount;
+    private void Awake()
+    {
+        base.Awake();
+    }
     void Start()
     {
-        for(int i = 0; i < _handCount; i++)
+        for(int i = 0; i < _storage.HandCount; i++)
         {
             int random = Random.Range(0, _storage.Storage.Count);
             SetHand(Target.Player, _storage.Storage[random]);

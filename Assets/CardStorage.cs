@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CardStorage : ScriptableObject
 {
     [SerializeField] List<CardState> _storage = new List<CardState>();
+    [SerializeField] int _handCount;
 
     public List<CardState> Storage => _storage;
+    public int HandCount => _handCount;
 }
