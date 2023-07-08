@@ -19,6 +19,7 @@ public class HandGenerator : FieldData
             random = Random.Range(0, _storage.Storage.Count);
             SetHand(Target.Enemy, _storage.Storage[random]);
         }
+        FieldData dat = Set();
     }
 
     void Update()

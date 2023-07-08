@@ -5,29 +5,37 @@ using UnityEngine.UI;
 
 public class FieldData : MonoBehaviour
 {
+    FieldData _instance;
+    public FieldData Instance => _instance;
+
     List<CardState> _playerHand = new List<CardState>();
     List<CardState> _enemyHand = new List<CardState>();
     List<CardState> _playerField = new List<CardState>();
     List<CardState> _enemyField = new List<CardState>();
     List<CardState> _target = new List<CardState>();
-    FieldData data;
 
-    protected void Awake(){data = this;}
-    public FieldData Set(){return data;}
+    public List<CardState> PlayerHand { get => _playerHand; set => _playerHand = value; }
+    public List<CardState> EnemyHand { get => _enemyHand; set => _enemyHand = value; }
+    public List<CardState> PlayerField { get => _playerField; set => _playerField = value; }
+    public List<CardState> EnemyField { get => _enemyField; set => _enemyField = value; }
+    public List<CardState> TargetData { get => _target; set => _target = value; }
+
+    protected void Awake(){ _instance = this;}
+    public FieldData Set(){return _instance; }
     public void SetTarget(List<CardState> setCard)
     {
-        _target = setCard;
+        Instance.TargetData = setCard;
     }
 
     public void SetHand(Target target, CardState card)
     {
         if(target == Target.Player)
         {
-            _playerHand.Add(card);
+            Instance.PlayerHand.Add(card);
         }
         if(target == Target.Enemy)
         {
-            _enemyHand.Add(card);
+            Instance.EnemyHand.Add(card);
         }
     }
 
@@ -35,11 +43,11 @@ public class FieldData : MonoBehaviour
     {
         if (target == Target.Player)
         {
-            _playerField.Add(card);
+            Instance.PlayerField.Add(card);
         }
         if (target == Target.Enemy)
         {
-            _enemyField.Add(card);
+            Instance.EnemyField.Add(card);
         }
     }
 
