@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 2995921422769313038}
   - component: {fileID: 5062129469333348078}
   - component: {fileID: 3329503717964970128}
+  - component: {fileID: 4036875568985155656}
   m_Layer: 5
   m_Name: Spell
   m_TagString: Untagged
@@ -157,6 +158,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4036875568985155656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237338859931934511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255938f7ca96b9b4cac0d678143e2622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cardImage: {fileID: 0}
+  _cost: 0
 --- !u!1 &8646852122870049742
 GameObject:
   m_ObjectHideFlags: 0
