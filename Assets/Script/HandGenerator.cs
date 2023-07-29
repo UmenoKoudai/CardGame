@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HandGenerator : FieldData
 {
     [SerializeField] CardStorage _storage;
+    [SerializeField] GameObject _playerHand;
+    [SerializeField] GameObject _enemyHand;
     private void Awake()
     {
         base.Awake();
@@ -20,6 +22,20 @@ public class HandGenerator : FieldData
             SetHand(Target.Enemy, _storage.Storage[random]);
         }
         FieldData dat = Set();
+    }
+
+    void CardSet(CardState selectCard, GameObject target)
+    {
+        if(selectCard.Type == CardState.CardType.Character)
+        {
+            var card = Instantiate((GameObject)Resources.Load("Character"), target.transform);
+            card.GetComponent<Character>().CardState = selectCard;
+        }
+        else if (selectCard.Type == CardState.CardType.Spell)
+        {
+            var card = Instantiate((GameObject)Resources.Load("Spell"), target.transform);
+            card.GetComponent<Spell>().CardState = selectCard;
+        }
     }
 
     void Update()

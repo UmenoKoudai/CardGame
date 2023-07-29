@@ -9,6 +9,8 @@ public class CardState
     [SerializeField] CardType _cardType = CardType.Character;
     [SerializeField] Sprite _cardImage;
     [SerializeField] int _cost;
+    public CardType Type { get { return _cardType; } }
+
 
     [SerializeField, SerializeReference, SubclassSelector]
     List<IAbility> _ability = new List<IAbility>();
@@ -19,7 +21,7 @@ public class CardState
     [SerializeField, SerializeReference, SubclassSelector]
     List<ITarget> _target = new List<ITarget>();
 
-    enum CardType
+    public enum CardType
     {
         Character,
         Spell,

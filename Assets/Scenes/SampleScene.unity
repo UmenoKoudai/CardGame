@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 187326481}
   - component: {fileID: 187326480}
   - component: {fileID: 187326479}
+  - component: {fileID: 187326483}
   - component: {fileID: 187326482}
   m_Layer: 5
   m_Name: Hand
@@ -366,6 +367,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &187326483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187326477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78592c249a710264fbaba2b56421f9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _storage: {fileID: 11400000, guid: 0d13b056ccfc690418220a5e2c79f761, type: 2}
+  _playerHand: {fileID: 0}
+  _enemyHand: {fileID: 0}
 --- !u!1 &246535798
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storage: {fileID: 11400000, guid: 0d13b056ccfc690418220a5e2c79f761, type: 2}
+  _playerHand: {fileID: 0}
+  _enemyHand: {fileID: 0}
 --- !u!1 &734479060
 GameObject:
   m_ObjectHideFlags: 0

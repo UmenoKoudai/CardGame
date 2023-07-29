@@ -5,9 +5,10 @@ using UnityEngine.EventSystems;
 
 public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-    [SerializeField] Sprite _cardImage;
-    [SerializeField] int _cost;
+    CardState _myState;
     GameObject _playerField;
+
+    public CardState CardState { get => _myState; set => _myState = value; }
 
     public void OnDrag(PointerEventData eventData)
     {
