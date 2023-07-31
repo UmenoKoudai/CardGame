@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public interface ICondition
 {
-    public abstract void Check();
+    public abstract bool Check(FieldData data);
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -30,6 +31,7 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
         if(_playerField)
         {
             transform.SetParent(_playerField.transform);
+            PlayAbility();
         }
     }
 
@@ -47,5 +49,15 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
             }
         }
         return result.gameObject;
+    }
+
+    public void PlayAbility()
+    {
+        var data = Set();
+        _myState.Target.ForEach(x => x.SetTarget(data));
+        if(_myState.Condition.All(x => x.Check(data)))
+        {
+            _myState.Ability.ForEach(x => x.Use(data));
+        }
     }
 }

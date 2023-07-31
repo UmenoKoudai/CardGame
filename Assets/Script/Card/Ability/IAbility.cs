@@ -5,5 +5,5 @@ using UnityEngine.UI;
 
 public interface IAbility
 {
-    public abstract void Use();
+    public abstract void Use(FieldData data);
 }

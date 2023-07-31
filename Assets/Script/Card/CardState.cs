@@ -21,6 +21,10 @@ public class CardState
     [SerializeField, SerializeReference, SubclassSelector]
     List<ITarget> _target = new List<ITarget>();
 
+    public List<IAbility> Ability { get => _ability; set => _ability = value; }
+    public List<ICondition> Condition { get => _condition; set => _condition = value; }
+    public List<ITarget> Target { get => _target; set => _target = value; }
+
     public enum CardType
     {
         Character,

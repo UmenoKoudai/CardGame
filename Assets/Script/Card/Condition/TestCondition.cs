@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DamageAbility : IAbility
+public class TestCondition : ICondition
 {
-    public void Use(FieldData data)
+    public bool Check(FieldData data)
     {
-
+        return true;
     }
 }

@@ -7,16 +7,4 @@ public class Character : CardBase
     [SerializeField] Text _costText;
     [SerializeField] Text _powerText;
     [SerializeField] Text _defenseText;
-
-    public void Use()
-    {
-    }
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-        
-    }
 }
