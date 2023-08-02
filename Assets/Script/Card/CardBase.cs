@@ -23,7 +23,7 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        throw new NotImplementedException();
+        Debug.Log("カード選択中");
     }
 
     public void OnPointerUp(PointerEventData eventData)

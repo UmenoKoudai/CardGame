@@ -14,25 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _storage:
   - _cardType: 1
-    _cardImage: {fileID: 0}
-    _cost: 0
+    _cardImage: {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+    _cost: 5
     _ability:
-    - rid: -2
+    - rid: 1472715618745057280
     _condition:
-    - rid: -2
+    - rid: 1472715618745057281
     _target:
     - rid: 664424349432020992
     - rid: 664424349432020993
-  - _cardType: 1
-    _cardImage: {fileID: 0}
-    _cost: 0
+  - _cardType: 0
+    _cardImage: {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+    _cost: 5
     _ability:
     - rid: -2
     _condition:
     - rid: -2
     _target: []
   - _cardType: 1
-    _cardImage: {fileID: 0}
+    _cardImage: {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
     _cost: 0
     _ability:
     - rid: -2
@@ -49,3 +49,7 @@ MonoBehaviour:
       type: {class: EnemyHandTarget, ns: , asm: Assembly-CSharp}
     - rid: 664424349432020993
       type: {class: RandomTarget, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057280
+      type: {class: DamageAbility, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057281
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}

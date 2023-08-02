@@ -18,6 +18,7 @@ public class HandGenerator : FieldData
         {
             int random = Random.Range(0, _storage.Storage.Count);
             SetHand(Target.Player, _storage.Storage[random]);
+            CardSet(_storage.Storage[random], _playerHand);
             random = Random.Range(0, _storage.Storage.Count);
             SetHand(Target.Enemy, _storage.Storage[random]);
         }
