@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class FieldData : MonoBehaviour
 {
-    FieldData _instance;
-    public FieldData Instance => _instance;
+    static FieldData _instance;
+    public static FieldData Instance => _instance;
 
     List<CardState> _playerHand = new List<CardState>();
     List<CardState> _enemyHand = new List<CardState>();
@@ -20,7 +20,13 @@ public class FieldData : MonoBehaviour
     public List<CardState> EnemyField { get => _enemyField; set => _enemyField = value; }
     public List<CardState> TargetData { get => _target; set => _target = value; }
 
-    protected void Awake(){ _instance = this;}
+    protected void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+    }
     public FieldData Set(){return _instance; }
     public void SetTarget(List<CardState> setCard)
     {

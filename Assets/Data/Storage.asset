@@ -17,39 +17,59 @@ MonoBehaviour:
     _cardImage: {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
     _cost: 5
     _ability:
-    - rid: 1472715618745057280
+    - rid: 1472715618745057282
     _condition:
     - rid: 1472715618745057281
     _target:
-    - rid: 664424349432020992
-    - rid: 664424349432020993
+    - rid: 1472715618745057293
   - _cardType: 0
     _cardImage: {fileID: -2053461982, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
     _cost: 5
     _ability:
-    - rid: -2
+    - rid: 1472715618745057283
     _condition:
-    - rid: -2
-    _target: []
+    - rid: 1472715618745057284
+    _target:
+    - rid: 1472715618745057292
   - _cardType: 1
     _cardImage: {fileID: -1260174942, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
     _cost: 0
     _ability:
-    - rid: -2
+    - rid: 1472715618745057289
     _condition:
-    - rid: -2
-    _target: []
+    - rid: 1472715618745057290
+    _target:
+    - rid: 1472715618745057291
+  - _cardType: 0
+    _cardImage: {fileID: 285830086, guid: 71ad172f81917dc4c88b385499ba85c4, type: 3}
+    _cost: 1
+    _ability:
+    - rid: 1472715618745057289
+    _condition:
+    - rid: 1472715618745057290
+    _target:
+    - rid: 1472715618745057294
   _handCount: 5
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
-    - rid: 664424349432020992
-      type: {class: EnemyHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 664424349432020993
-      type: {class: RandomTarget, ns: , asm: Assembly-CSharp}
-    - rid: 1472715618745057280
-      type: {class: DamageAbility, ns: , asm: Assembly-CSharp}
     - rid: 1472715618745057281
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057282
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057283
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057284
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057289
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057290
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057291
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057292
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057293
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 1472715618745057294
+      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}

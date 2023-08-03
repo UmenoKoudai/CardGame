@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestAbility : MonoBehaviour
+public class TestAbility : IAbility
 {
-    void Start()
+    public void Use(FieldData data)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        data.TargetData.ForEach(x => Debug.Log(x));
+        Debug.Log("カード使用した");
     }
 }
