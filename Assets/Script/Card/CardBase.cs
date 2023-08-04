@@ -30,6 +30,9 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
     {
         if(_playerField)
         {
+            var data = Set();
+            data.PlayerField.Add(_myState);
+            data.PlayerHand.Remove(_myState);
             transform.SetParent(_playerField.transform);
             PlayAbility();
         }
