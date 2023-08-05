@@ -9,6 +9,8 @@ public class CardState
     [SerializeField] CardType _cardType = CardType.Character;
     [SerializeField] Sprite _cardImage;
     [SerializeField] int _cost;
+    [SerializeField] int _attack;
+    [SerializeField] int _defense;
     public CardType Type { get { return _cardType; } }
 
 
@@ -23,6 +25,8 @@ public class CardState
 
     public Sprite CardImage { get => _cardImage; }
     public int Cost { get => _cost; }
+    public int Attack => _attack;
+    public int Defense => _defense;
     public List<IAbility> Ability { get => _ability; set => _ability = value; }
     public List<ICondition> Condition { get => _condition; set => _condition = value; }
     public List<ITarget> Target { get => _target; set => _target = value; }

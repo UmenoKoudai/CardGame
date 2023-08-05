@@ -12,5 +12,7 @@ public class Character : CardBase
     {
         _costText.text = base.CardState.Cost.ToString("d2");
         GetComponent<Image>().sprite = base.CardState.CardImage;
+        _powerText.text = base.CardState.Attack.ToString("d2");
+        _defenseText.text = base.CardState.Defense.ToString("d2");
     }
 }
