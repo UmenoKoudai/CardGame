@@ -13,12 +13,16 @@ public class FieldData : MonoBehaviour
     List<CardState> _playerField = new List<CardState>();
     List<CardState> _enemyField = new List<CardState>();
     List<CardState> _target = new List<CardState>();
+    int _playerCost;
+    int _enemyCost;
 
     public List<CardState> PlayerHand { get => _playerHand; set => _playerHand = value; }
     public List<CardState> EnemyHand { get => _enemyHand; set => _enemyHand = value; }
     public List<CardState> PlayerField { get => _playerField; set => _playerField = value; }
     public List<CardState> EnemyField { get => _enemyField; set => _enemyField = value; }
     public List<CardState> TargetData { get => _target; set => _target = value; }
+    public int PlayerCost { get => _playerCost; set => _playerCost = value; }
+    public int EnemyCost { get => _enemyCost; set => _enemyCost = value; }
 
     protected void Awake()
     {
@@ -54,6 +58,18 @@ public class FieldData : MonoBehaviour
         if (target == Target.Enemy)
         {
             Instance.EnemyField.Add(card);
+        }
+    }
+
+    public void SetCost(Target target, int cost)
+    {
+        if(target == Target.Player)
+        {
+            Instance.PlayerCost = cost;
+        }
+        if(target == Target.Enemy)
+        {
+            Instance.EnemyCost = cost;
         }
     }
 
