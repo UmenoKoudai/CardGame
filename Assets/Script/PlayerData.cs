@@ -8,5 +8,4 @@ public class PlayerData : MonoBehaviour
     [SerializeField] Text _nowCostText;
     [SerializeField] int _nowCost;
 
-    public bool 
 }
