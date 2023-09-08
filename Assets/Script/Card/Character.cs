@@ -14,5 +14,9 @@ public class Character : CardBase
         GetComponent<Image>().sprite = base.CardState.CardImage;
         _powerText.text = base.CardState.Attack.ToString("d2");
         _defenseText.text = base.CardState.Defense.ToString("d2");
+        if(base.CardState.Defense <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

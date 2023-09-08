@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class HandGenerator : FieldData
 {
     [SerializeField] CardStorage _storage;
-    [SerializeField] GameObject _playerHand;
-    [SerializeField] GameObject _enemyHand;
+    [SerializeField] GameObject _playerHandObject;
+    [SerializeField] GameObject _enemyHandObject;
     private void Awake()
     {
         base.Awake();
@@ -16,14 +16,14 @@ public class HandGenerator : FieldData
     {
         for(int i = 0; i < _storage.HandCount; i++)
         {
-            int random = Random.Range(0, _storage.Storage.Count);
+            int random = Random.Range(0, _storage.Storage.Length);
             SetHand(Target.Player, _storage.Storage[random]);
-            CardSet(_storage.Storage[random], _playerHand);
-            random = Random.Range(0, _storage.Storage.Count);
+            CardSet(_storage.Storage[random], _playerHandObject);
+            random = Random.Range(0, _storage.Storage.Length);
             SetHand(Target.Enemy, _storage.Storage[random]);
-            CardSet(_storage.Storage[random], _enemyHand);
+            CardSet(_storage.Storage[random], _enemyHandObject);
         }
-        FieldData dat = Set();
+        FieldData data = Set();
     }
 
     void CardSet(CardState selectCard, GameObject target)

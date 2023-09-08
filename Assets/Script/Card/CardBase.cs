@@ -15,15 +15,15 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
     {
         transform.position = eventData.position;
         _playerField = GetField(eventData);
-        if (_playerField)
-        {
-            Debug.Log($"{_playerField.name}の上にいます");
-        }
+        //if (_playerField)
+        //{
+        //    Debug.Log($"{_playerField.name}の上にいます");
+        //}
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("カード選択中");
+        //Debug.Log("カード選択中");
     }
 
     public void OnPointerUp(PointerEventData eventData)

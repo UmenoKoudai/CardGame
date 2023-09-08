@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
 public class TestAbility : IAbility
 {
+    public string _debug;
     public void Use(FieldData data)
     {
-        Debug.Log($"HandCount:{data.PlayerHand.Count}");
-        Debug.Log($"FieldCount:{data.PlayerField.Count}");
-        data.TargetData.ForEach(x => Debug.Log(x));
-        Debug.Log("カード使用した");
+        data.TargetData.ForEach(x => Debug.Log(x.CardName));
+       // Debug.Log($"{_debug}カード使用した");
     }
 }

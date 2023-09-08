@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class CostManagement : FieldData
 {
-    [SerializeField] Target _target;
+    [SerializeField] Target _setTarget;
     [SerializeField] Text _nowCostText;
     [SerializeField] int _nowCost;
     private void Start()
     {
-        SetCost(_target, _nowCost);
+        SetCost(_setTarget, _nowCost);
     }
 
 }

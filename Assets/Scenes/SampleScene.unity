@@ -464,7 +464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1e55cd85c84cf42898e47cb84ce801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  __nowCostText: {fileID: 0}
+  _setTarget: 0
+  _nowCostText: {fileID: 0}
   _nowCost: 0
 --- !u!1 &519420028
 GameObject:
@@ -683,8 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _storage: {fileID: 11400000, guid: 0d13b056ccfc690418220a5e2c79f761, type: 2}
-  _playerHand: {fileID: 187326477}
-  _enemyHand: {fileID: 1587298742}
+  _playerHandObject: {fileID: 187326477}
+  _enemyHandObject: {fileID: 1587298742}
 --- !u!4 &685033561
 Transform:
   m_ObjectHideFlags: 0
@@ -920,7 +921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d1e55cd85c84cf42898e47cb84ce801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  __nowCostText: {fileID: 0}
+  _setTarget: 0
+  _nowCostText: {fileID: 0}
   _nowCost: 0
 --- !u!1 &1587298742
 GameObject:
