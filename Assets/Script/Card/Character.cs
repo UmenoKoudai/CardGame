@@ -7,6 +7,13 @@ public class Character : CardBase
     [SerializeField] Text _costText;
     [SerializeField] Text _powerText;
     [SerializeField] Text _defenseText;
+    int _defense;
+    int _power;
+    int _cost;
+    private void Start()
+    {
+
+    }
 
     public void Update()
     {
@@ -18,5 +25,10 @@ public class Character : CardBase
         {
             Destroy(gameObject);
         }
+    }
+
+    public override void AddDamage(int damage)
+    {
+
     }
 }

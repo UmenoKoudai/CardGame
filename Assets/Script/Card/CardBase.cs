@@ -63,4 +63,9 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
             _myState.Ability.ForEach(x => x.Use(data));
         }
     }
+
+    public virtual void AddDamage(int damage)
+    {
+        Debug.LogError("派生クラスでオーバーロードしていません");
+    }
 }
