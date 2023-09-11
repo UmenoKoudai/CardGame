@@ -10,7 +10,7 @@ public class TestAbility : IAbility
     public string _debug;
     public void Use(FieldData data)
     {
-        data.TargetData.ForEach(x => Debug.Log(x.CardName));
-       // Debug.Log($"{_debug}カード使用した");
+        //data.TargetData.ForEach(x => Debug.Log(x.CardName));
+       Debug.Log($"{_debug}カード使用した");
     }
 }

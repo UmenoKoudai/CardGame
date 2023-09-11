@@ -8,19 +8,19 @@ public class FieldData : MonoBehaviour
     static FieldData _instance;
     public static FieldData Instance => _instance;
 
-    List<CardState> _playerHand = new List<CardState>();
-    List<CardState> _enemyHand = new List<CardState>();
-    List<CardState> _playerField = new List<CardState>();
-    List<CardState> _enemyField = new List<CardState>();
-    List<CardState> _target = new List<CardState>();
+    List<CardBase> _playerHand = new List<CardBase>();
+    List<CardBase> _enemyHand = new List<CardBase>();
+    List<CardBase> _playerField = new List<CardBase>();
+    List<CardBase> _enemyField = new List<CardBase>();
+    List<CardBase> _target = new List<CardBase>();
     int _playerCost;
     int _enemyCost;
 
-    public List<CardState> PlayerHand { get => _playerHand; set => _playerHand = value; }
-    public List<CardState> EnemyHand { get => _enemyHand; set => _enemyHand = value; }
-    public List<CardState> PlayerField { get => _playerField; set => _playerField = value; }
-    public List<CardState> EnemyField { get => _enemyField; set => _enemyField = value; }
-    public List<CardState> TargetData { get => _target; set => _target = value; }
+    public List<CardBase> PlayerHand { get => _playerHand; set => _playerHand = value; }
+    public List<CardBase> EnemyHand { get => _enemyHand; set => _enemyHand = value; }
+    public List<CardBase> PlayerField { get => _playerField; set => _playerField = value; }
+    public List<CardBase> EnemyField { get => _enemyField; set => _enemyField = value; }
+    public List<CardBase> TargetData { get => _target; set => _target = value; }
     public int PlayerCost { get => _playerCost; set => _playerCost = value; }
     public int EnemyCost { get => _enemyCost; set => _enemyCost = value; }
 
@@ -32,12 +32,12 @@ public class FieldData : MonoBehaviour
         }
     }
     public FieldData Set(){return _instance; }
-    public void SetTarget(List<CardState> setCard)
+    public void SetTarget(List<CardBase> setCard)
     {
         Instance.TargetData = setCard;
     }
 
-    public void SetHand(Target target, CardState card)
+    public void SetHand(Target target, CardBase card)
     {
         if(target == Target.Player)
         {
@@ -49,7 +49,7 @@ public class FieldData : MonoBehaviour
         }
     }
 
-    public void SetField(Target target, CardState card)
+    public void SetField(Target target, CardBase card)
     {
         if (target == Target.Player)
         {

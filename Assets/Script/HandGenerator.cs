@@ -17,10 +17,13 @@ public class HandGenerator : FieldData
         for(int i = 0; i < _storage.HandCount; i++)
         {
             int random = Random.Range(0, _storage.Storage.Length);
-            SetHand(Target.Player, _storage.Storage[random]);
+            var card = new CardBase();
+            card.CardState = _storage.Storage[random];
+            SetHand(Target.Player, card);
             CardSet(_storage.Storage[random], _playerHandObject);
             random = Random.Range(0, _storage.Storage.Length);
-            SetHand(Target.Enemy, _storage.Storage[random]);
+            card.CardState = _storage.Storage[random];
+            SetHand(Target.Enemy, card);
             CardSet(_storage.Storage[random], _enemyHandObject);
         }
         FieldData data = Set();
