@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] int _playerTotalCost;
     [SerializeField] Text _costText;
+
+    public int PlayerTotalCost => _playerTotalCost;
     void Start()
     {
         

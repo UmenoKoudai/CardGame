@@ -13,16 +13,87 @@ MonoBehaviour:
   m_Name: Storage
   m_EditorClassIdentifier: 
   _storage:
-  - _cardName: "\u30AA\u30FC\u30AF"
+  - _cardName: "\u5E06\u6751\u3000\u660E"
     _cardType: 0
-    _cardImage: {fileID: 0}
-    _cost: 0
+    _cardImage: {fileID: 21300000, guid: 545ee963c34558f438ed6483b258b0a6, type: 3}
+    _cost: 5
+    _attack: 2
+    _defense: 5
+    _ability:
+    - rid: 8047722781706551296
+    _condition:
+    - rid: 8047722781706551297
+    _target:
+    - rid: 8047722781706551298
+  - _cardName: "\u9ED2\u4F0F\u3000\u66DC\u5B50"
+    _cardType: 0
+    _cardImage: {fileID: 21300000, guid: c44bd168a9335344a8faae95d2f1f141, type: 3}
+    _cost: 3
+    _attack: 4
+    _defense: 1
+    _ability:
+    - rid: 8047722781706551299
+    _condition:
+    - rid: 8047722781706551300
+    _target:
+    - rid: 8047722781706551301
+  - _cardName: "\u5F13\u6708\u3000\u73B2\u90A3"
+    _cardType: 0
+    _cardImage: {fileID: 21300000, guid: 337b095b5d4dee0439710f0ebfe40b55, type: 3}
+    _cost: 2
+    _attack: 2
+    _defense: 2
+    _ability:
+    - rid: 8047722781706551302
+    _condition:
+    - rid: 8047722781706551303
+    _target:
+    - rid: 8047722781706551304
+  - _cardName: "\u30B9\u30AB\u30A4\u30C9\u30E9\u30B4\u30F3"
+    _cardType: 1
+    _cardImage: {fileID: 21300000, guid: 5023e4207fb892249ae3e8c8b03dd7f9, type: 3}
+    _cost: 10
     _attack: 0
     _defense: 0
-    _ability: []
-    _condition: []
-    _target: []
+    _ability:
+    - rid: 8047722781706551305
+    _condition:
+    - rid: 8047722781706551306
+    _target:
+    - rid: 8047722781706551307
   _handCount: 5
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8047722781706551296
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+      data:
+        _debug: "\u5E06\u6751\u3000\u660E"
+    - rid: 8047722781706551297
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551298
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551299
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+      data:
+        _debug: "\u9ED2\u4F0F\u3000\u66DC\u5B50"
+    - rid: 8047722781706551300
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551301
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551302
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+      data:
+        _debug: "\u5F13\u6708\u3000\u73B2\u90A3"
+    - rid: 8047722781706551303
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551304
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551305
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
+      data:
+        _debug: "\u30B9\u30AB\u30A4\u30C9\u30E9\u30B4\u30F3"
+    - rid: 8047722781706551306
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8047722781706551307
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}

@@ -10,9 +10,13 @@ public class Character : CardBase
     int _defense;
     int _power;
     int _cost;
+
+    public int Defense => _defense;
     private void Start()
     {
-
+        _defense = CardState.Defense;
+        _power = CardState.Attack;
+        _cost = CardState.Cost;
     }
 
     public void Update()

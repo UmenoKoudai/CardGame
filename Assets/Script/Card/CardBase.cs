@@ -8,7 +8,25 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
 {
     CardState _myState;
     GameObject _playerField;
+    GameManager _gameManager;
+    int _attack;
+    int _defense;
+    int _cost;
+    int _playerTotalCost;
 
+    public int Attack { get => _attack; set => _attack = value; }
+    public int Defense { get => _defense; set => _defense = value; }
+    public int Cost { get => _cost; set => _cost = value; }
+    public int PlayerTotalCost => _playerTotalCost;
+
+    private void Start()
+    {
+        _gameManager = FindObjectOfType<GameManager>();
+        _attack = _myState.Attack;
+        _defense = _myState.Defense;
+        _cost = _myState.Cost;
+        _playerTotalCost = _gameManager.PlayerTotalCost;
+    }
     public CardState CardState { get => _myState; set => _myState = value; }
 
     public void OnDrag(PointerEventData eventData)
