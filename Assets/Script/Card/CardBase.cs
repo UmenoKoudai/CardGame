@@ -4,13 +4,13 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     CardState _myState;
     GameObject _playerField;
     GameManager _gameManager;
     int _attack;
-    int _defense;
+    int _defense = 1;
     int _cost;
     int _playerTotalCost;
 
@@ -82,8 +82,5 @@ public class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPointerDown
         }
     }
 
-    public virtual void AddDamage(int damage)
-    {
-        Debug.LogError("派生クラスでオーバーロードしていません");
-    }
+    public abstract void AddDamage(int damage);
 }

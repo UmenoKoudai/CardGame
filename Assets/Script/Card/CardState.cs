@@ -12,8 +12,6 @@ public class CardState
     [SerializeField] int _cost;
     [SerializeField] int _attack;
     [SerializeField] int _defense;
-    public CardType Type { get { return _cardType; } }
-
 
     [SerializeField, SerializeReference, SubclassSelector]
     List<IAbility> _ability = new List<IAbility>();
@@ -24,19 +22,15 @@ public class CardState
     [SerializeField, SerializeReference, SubclassSelector]
     List<ITarget> _target = new List<ITarget>();
 
-    public Sprite CardImage { get => _cardImage; }
-    public int Cost { get => _cost; }
+    public Sprite CardImage => _cardImage;
+    public CardType Type => _cardType;
+    public int Cost => _cost;
     public int Attack => _attack;
     public int Defense => _defense;
     public string CardName => _cardName;
     public List<IAbility> Ability { get => _ability; set => _ability = value; }
     public List<ICondition> Condition { get => _condition; set => _condition = value; }
     public List<ITarget> Target { get => _target; set => _target = value; }
-
-    public void Damage(int damage)
-    {
-        _defense -= damage;
-    }
 
     public enum CardType
     {

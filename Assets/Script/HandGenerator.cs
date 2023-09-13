@@ -11,40 +11,33 @@ public class HandGenerator : FieldData
     private void Awake()
     {
         base.Awake();
-    }
-    void Start()
-    {
-        for(int i = 0; i < _storage.HandCount; i++)
+        for (int i = 0; i < _storage.HandCount; i++)
         {
             int random = Random.Range(0, _storage.Storage.Length);
-            var card = new CardBase();
-            card.CardState = _storage.Storage[random];
-            SetHand(Target.Player, card);
-            CardSet(_storage.Storage[random], _playerHandObject);
+            var characterCard = new Character();
+            characterCard.CardState = _storage.Storage[random];
+            //SetHand(Target.Player, characterCard);
+            CardSet(_storage.Storage[random], _playerHandObject, Target.Player);
             random = Random.Range(0, _storage.Storage.Length);
-            card.CardState = _storage.Storage[random];
-            SetHand(Target.Enemy, card);
-            CardSet(_storage.Storage[random], _enemyHandObject);
+            var spellCard = new Spell();
+            spellCard.CardState = _storage.Storage[random];
+            //SetHand(Target.Enemy, spellCard);
+            CardSet(_storage.Storage[random], _enemyHandObject, Target.Enemy);
         }
-        FieldData data = Set();
     }
-
-    void CardSet(CardState selectCard, GameObject target)
+    void CardSet(CardState selectCard, GameObject target, Target playerType)
     {
         if(selectCard.Type == CardState.CardType.Character)
         {
             var card = Instantiate((GameObject)Resources.Load("Character"), target.transform);
-            card.GetComponent<Character>().CardState = selectCard;
+            card.GetComponent<CardBase>().CardState = selectCard;
+            SetHand(playerType, card.GetComponent<CardBase>());
         }
         else if (selectCard.Type == CardState.CardType.Spell)
         {
             var card = Instantiate((GameObject)Resources.Load("Spell"), target.transform);
-            card.GetComponent<Spell>().CardState = selectCard;
+            card.GetComponent<CardBase>().CardState = selectCard;
+            SetHand(playerType, card.GetComponent<CardBase>());
         }
-    }
-
-    void Update()
-    {
-        
     }
 }

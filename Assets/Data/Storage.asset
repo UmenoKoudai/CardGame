@@ -56,7 +56,7 @@ MonoBehaviour:
     _attack: 0
     _defense: 0
     _ability:
-    - rid: 8047722781706551305
+    - rid: 8047722829620445184
     _condition:
     - rid: 8047722781706551306
     _target:
@@ -89,11 +89,11 @@ MonoBehaviour:
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
     - rid: 8047722781706551304
       type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551305
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: "\u30B9\u30AB\u30A4\u30C9\u30E9\u30B4\u30F3"
     - rid: 8047722781706551306
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
     - rid: 8047722781706551307
       type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047722829620445184
+      type: {class: AllDamageAbility, ns: , asm: Assembly-CSharp}
+      data:
+        _damage: 2
