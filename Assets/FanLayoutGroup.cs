@@ -4,35 +4,14 @@ using UnityEngine;
 public class FanLayoutGroup : MonoBehaviour
 {
     [SerializeField] Transform _showPosition;
+    [SerializeField] Transform _base;
     [SerializeField] int _cardSpace;
-    [SerializeField]List<GameObject> _childObjects = new List<GameObject>();
     Vector3 _basePosition;
     bool _isShow = false;
 
     private void Start()
     {
-        SetCard();
-    }
-
-    public void SetCard()
-    {
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var childObject = transform.GetChild(i);
-            _childObjects.Add(childObject.gameObject);
-        }SetPosition(transform.position);
-    }
-
-    public void SetPosition(Vector3 cardPosition)
-    {
-        int x = -(transform.childCount / 2 * _cardSpace);
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            var childObject = transform.GetChild(i);
-            _childObjects.Add(childObject.gameObject);
-            childObject.position = new Vector3(cardPosition.x + x, cardPosition.y, 0);
-            x += _cardSpace;
-        }
+        _basePosition = new Vector3(_base.position.x, _base.position.y, _base.position.z);
     }
 
     public void CardClick()
@@ -40,25 +19,11 @@ public class FanLayoutGroup : MonoBehaviour
         _isShow = !_isShow;
         if(_isShow)
         {
-            ShowCard();
+            transform.position = _showPosition.position;
         }
         else
         {
-            BaseCard();
+            transform.position = _basePosition;
         }
-    }
-
-    public void ShowCard()
-    {
-        _basePosition = transform.position;
-        _cardSpace *= 2;
-        SetPosition(_showPosition.position);
-    }
-
-    public void BaseCard()
-    {
-        transform.position = _basePosition;
-        _cardSpace /= 2;
-        SetPosition(transform.position);
     }
 }

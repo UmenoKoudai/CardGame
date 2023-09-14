@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 187326480}
   - component: {fileID: 187326479}
   - component: {fileID: 187326482}
+  - component: {fileID: 187326483}
   m_Layer: 5
   m_Name: Hand
   m_TagString: Untagged
@@ -160,8 +161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -399.99988, y: 120}
-  m_SizeDelta: {x: 578.687, y: 257.2614}
+  m_AnchoredPosition: {x: -424.1267, y: 124.32}
+  m_SizeDelta: {x: 626.9408, y: 248.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &187326479
 MonoBehaviour:
@@ -176,8 +177,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showPosition: {fileID: 1591252420}
+  _base: {fileID: 187326478}
   _cardSpace: 70
-  _childObjects: []
 --- !u!114 &187326480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +246,32 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &187326483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187326477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 90
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
 --- !u!1 &246535798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,8 +1331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showPosition: {fileID: 1591252420}
+  _base: {fileID: 1587298743}
   _cardSpace: 70
-  _childObjects: []
 --- !u!114 &1587298746
 MonoBehaviour:
   m_ObjectHideFlags: 0
