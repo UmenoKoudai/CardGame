@@ -25,7 +25,6 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
         _attack = _myState.Attack;
         _defense = _myState.Defense;
         _cost = _myState.Cost;
-        _playerTotalCost = _gameManager.PlayerTotalCost;
     }
     public CardState CardState { get => _myState; set => _myState = value; }
 
