@@ -96,4 +96,4 @@ MonoBehaviour:
     - rid: 8047722829620445184
       type: {class: AllDamageAbility, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 2
+        _damage: -1

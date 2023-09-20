@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerManager : GameManager
 {
     int _totalCost = 1;
-    int _
+    int _currn;
     void Start()
     {
         
