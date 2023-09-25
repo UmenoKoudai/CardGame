@@ -2,33 +2,32 @@ using UnityEngine;
 
 public class EnemyManager : GameManager
 {
-    int _totalCost = 1;
-    void Start()
-    {
-        
-    }
-
+    int _totalCost = 0;
+    int _currentTurn = 0;
     void Update()
     {
         CostText.text = _totalCost.ToString();
+        if(NowTurn == TurnType.Enemy && _currentTurn == _totalCost)
+        {
+            BeginTurn();
+        }
+    }
+
+    public void BeginTurn()
+    {
+        Debug.Log("エネミーターン開始");
+        _totalCost++;
+        int random = Random.Range(0, Storage.Storage.Count);
+        var card = Instantiate((GameObject)Resources.Load("Character"), HandPosition);
+        card.GetComponent<CardBase>().CardState = Storage.Storage[random];
+        SetHand(Target.Enemy, card.GetComponent<CardBase>());
+        EndTurn();
     }
 
     public void EndTurn()
     {
-        TurnManager.EndTurn();
-    }
-
-    public override void OnBeginTurn()
-    {
-        _totalCost++;
-        int random = Random.Range(0, Storage.Storage.Length);
-        var card = Instantiate((GameObject)Resources.Load("Character"), HandPosition);
-        card.GetComponent<CardBase>().CardState = Storage.Storage[random];
-        SetHand(Target.Enemy, card.GetComponent<CardBase>());
-    }
-
-    public override void OnEndTurn()
-    {
-        NowTurn = TurnType.Player;
+        Debug.Log("エネミーターン終了");
+        _currentTurn = _totalCost;
+        Instance.NowTurn = TurnType.Player;
     }
 }

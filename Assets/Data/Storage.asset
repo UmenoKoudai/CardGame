@@ -13,87 +13,87 @@ MonoBehaviour:
   m_Name: Storage
   m_EditorClassIdentifier: 
   _storage:
-  - _cardName: "\u5E06\u6751\u3000\u660E"
+  - _cardName: "\u91D1\u525B\u5BFA"
     _cardType: 0
-    _cardImage: {fileID: 21300000, guid: 545ee963c34558f438ed6483b258b0a6, type: 3}
-    _cost: 5
-    _attack: 2
-    _defense: 5
-    _ability:
-    - rid: 8047722781706551296
-    _condition:
-    - rid: 8047722781706551297
-    _target:
-    - rid: 8047722781706551298
-  - _cardName: "\u9ED2\u4F0F\u3000\u66DC\u5B50"
-    _cardType: 0
-    _cardImage: {fileID: 21300000, guid: c44bd168a9335344a8faae95d2f1f141, type: 3}
-    _cost: 3
-    _attack: 4
+    _cardImage: {fileID: 21300000, guid: 7aa62b78aa9f91c48b5295e3baa4d2ec, type: 3}
+    _cost: 1
+    _attack: 11
     _defense: 1
     _ability:
-    - rid: 8047722781706551299
+    - rid: 8047723080248459360
     _condition:
-    - rid: 8047722781706551300
+    - rid: 8047723080248459361
     _target:
-    - rid: 8047722781706551301
-  - _cardName: "\u5F13\u6708\u3000\u73B2\u90A3"
+    - rid: 8047723080248459362
+  - _cardName: "\u4E03\u702C"
     _cardType: 0
-    _cardImage: {fileID: 21300000, guid: 337b095b5d4dee0439710f0ebfe40b55, type: 3}
-    _cost: 2
-    _attack: 2
-    _defense: 2
+    _cardImage: {fileID: 21300000, guid: 57dab926e9fce9b4dbfa33cdc8b3b12b, type: 3}
+    _cost: 11
+    _attack: 1
+    _defense: 11
     _ability:
-    - rid: 8047722781706551302
+    - rid: 8047723080248459363
     _condition:
-    - rid: 8047722781706551303
+    - rid: 8047723080248459364
     _target:
-    - rid: 8047722781706551304
-  - _cardName: "\u30B9\u30AB\u30A4\u30C9\u30E9\u30B4\u30F3"
+    - rid: 8047723080248459365
+  - _cardName: "\u685C"
     _cardType: 1
-    _cardImage: {fileID: 21300000, guid: 5023e4207fb892249ae3e8c8b03dd7f9, type: 3}
-    _cost: 10
+    _cardImage: {fileID: 21300000, guid: 297996bac9ecbeb42b40a6f2a74fb6e8, type: 3}
+    _cost: 1
     _attack: 0
     _defense: 0
     _ability:
-    - rid: 8047722829620445184
+    - rid: 8047723080248459366
     _condition:
-    - rid: 8047722781706551306
+    - rid: 8047723080248459367
     _target:
-    - rid: 8047722781706551307
-  _handCount: 5
+    - rid: 8047723080248459368
+  - _cardName: "\u5FA1\u4F3D"
+    _cardType: 1
+    _cardImage: {fileID: 21300000, guid: ab1c83c1d4262d241a45dad4cc5c8246, type: 3}
+    _cost: 1
+    _attack: 0
+    _defense: 0
+    _ability:
+    - rid: 8047723080248459369
+    _condition:
+    - rid: 8047723080248459370
+    _target:
+    - rid: 8047723080248459371
+  _handCount: 3
   references:
     version: 2
     RefIds:
-    - rid: 8047722781706551296
+    - rid: 8047723080248459360
       type: {class: TestAbility, ns: , asm: Assembly-CSharp}
       data:
-        _debug: "\u5E06\u6751\u3000\u660E"
-    - rid: 8047722781706551297
+        _debug: 
+    - rid: 8047723080248459361
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551298
-      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551299
+    - rid: 8047723080248459362
+      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047723080248459363
       type: {class: TestAbility, ns: , asm: Assembly-CSharp}
       data:
-        _debug: "\u9ED2\u4F0F\u3000\u66DC\u5B50"
-    - rid: 8047722781706551300
+        _debug: 
+    - rid: 8047723080248459364
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551301
-      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551302
+    - rid: 8047723080248459365
+      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047723080248459366
       type: {class: TestAbility, ns: , asm: Assembly-CSharp}
       data:
-        _debug: "\u5F13\u6708\u3000\u73B2\u90A3"
-    - rid: 8047722781706551303
+        _debug: 
+    - rid: 8047723080248459367
       type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551304
-      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551306
-      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 8047722781706551307
-      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}
-    - rid: 8047722829620445184
-      type: {class: AllDamageAbility, ns: , asm: Assembly-CSharp}
+    - rid: 8047723080248459368
+      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
+    - rid: 8047723080248459369
+      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
       data:
-        _damage: -1
+        _debug: 
+    - rid: 8047723080248459370
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 8047723080248459371
+      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}

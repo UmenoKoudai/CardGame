@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static ICardType;
 
 [Serializable]
 public class CardState
@@ -32,9 +33,16 @@ public class CardState
     public List<ICondition> Condition { get => _condition; set => _condition = value; }
     public List<ITarget> Target { get => _target; set => _target = value; }
 
-    public enum CardType
+    public CardState(string name, int cost, int attack, int defense, Sprite cardImage, CardType type, List<IAbility> ability, List<ICondition> condition, List<ITarget> target)
     {
-        Character,
-        Spell,
+        _cardName = name;
+        _attack = attack;
+        _defense = defense;
+        _cost = cost;
+        _cardImage = cardImage;
+        _cardType = type;
+        _ability = ability;
+        _condition = condition;
+        _target = target;
     }
 }
