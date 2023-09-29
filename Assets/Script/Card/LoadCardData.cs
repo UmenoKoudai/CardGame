@@ -31,47 +31,37 @@ public class LoadCardData : MonoBehaviour
                 // スクリプトからのレスポンスを取得
                 string response = webRequest.downloadHandler.text;
                 CardDataStorage data = JsonUtility.FromJson<CardDataStorage>(response);
-                if (data.Data.Length != _cardStorage.Storage.Count)
+                _cardStorage.Storage.Clear();
+                foreach (var d in data.Data)
                 {
-                    foreach (var d in data.Data)
+                    var code = d.ImageCord;
+                    List<IAbility> ability = new List<IAbility>();
+                    List<ICondition> condition = new List<ICondition>();
+                    List<ITarget> target = new List<ITarget>();
+                    CardType cardType = d.CardType == "Character" ? CardType.Character : CardType.Spell;
+                    Sprite cardImage = Resources.Load<Sprite>(code);
+                    foreach (var a in d.Ability)
                     {
-                        var name = d.Name;
-                        var cost = d.Cost;
-                        var attack = d.Attack;
-                        var defense = d.Defense;
-                        var image = d.ImageCord;
-                        var type = d.CardType;
-                        List<IAbility> ability = new List<IAbility>();
-                        List<ICondition> condition = new List<ICondition>();
-                        List<ITarget> target = new List<ITarget>();
-                        Sprite cardImage = null;
-                        CardType cardType = CardType.None;
-                        foreach (var a in d.Ability)
+                        if (a == (int)AbilityID.Test)
                         {
-                            if (a == (int)AbilityID.Test)
-                            {
-                                ability.Add(new TestAbility());
-                            }
+                            ability.Add(new TestAbility());
                         }
-                        foreach (var c in d.Condition)
-                        {
-                            if (c == (int)ConditionID.Test)
-                            {
-                                condition.Add(new TestCondition());
-                            }
-                        }
-                        foreach (var t in d.Target)
-                        {
-                            if (t == (int)TargetID.Test)
-                            {
-                                target.Add(new PlayerFieldTarget());
-                            }
-                        }
-                        cardImage = Resources.Load<Sprite>(image);
-                        if (type == "Character") cardType = CardType.Character;
-                        if (type == "Spell") cardType = CardType.Spell;
-                        _cardStorage.Storage.Add(new CardState(name, cost, attack, defense, cardImage, cardType, ability, condition, target));
                     }
+                    foreach (var c in d.Condition)
+                    {
+                        if (c == (int)ConditionID.Test)
+                        {
+                            condition.Add(new TestCondition());
+                        }
+                    }
+                    foreach (var t in d.Target)
+                    {
+                        if (t == (int)TargetID.Test)
+                        {
+                            target.Add(new PlayerFieldTarget());
+                        }
+                    }
+                    _cardStorage.Storage.Add(new CardState(d.Name, d.Cost, d.Attack, d.Defense, cardImage, cardType, ability, condition, target));
                 }
             }
         }

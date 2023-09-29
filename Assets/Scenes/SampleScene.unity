@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79315f3efac1024f85d2c0e0fea6c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://script.google.com/macros/s/AKfycbyBoQT2p5elIBv0zd9TBrn_qKQQE-CwZYXabpu2UfUvsmFmdPQpb6MV1Br6yYuDSh2u/exec
+  url: https://script.google.com/macros/s/AKfycbz9NhtsEtkdfaS6wi4QS4UFvKThAhx_hAeT2LwoE0hiBb9z9Phqx0tOo2fApdextrLo/exec
   _cardStorage: {fileID: 11400000, guid: 0d13b056ccfc690418220a5e2c79f761, type: 2}
 --- !u!4 &980728028
 Transform:
@@ -1124,7 +1124,7 @@ RectTransform:
   m_GameObject: {fileID: 1167097021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.714623, y: 3.4042609, z: 1.0972}
+  m_LocalScale: {x: 1.0089959, y: 5.0600934, z: 1.6308781}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1258869514}
@@ -1133,7 +1133,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -844, y: -266}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1167097023
@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -690418764, guid: d529f63f32c1a2b438dc3ffcf58f7a73, type: 3}
+  m_Sprite: {fileID: 349058381, guid: b2713bbf286ea3b4d8cf4478d348ee16, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.025200844, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

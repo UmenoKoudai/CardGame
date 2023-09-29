@@ -6,7 +6,7 @@ public class EnemyManager : GameManager
     int _currentTurn = 0;
     void Update()
     {
-        CostText.text = _totalCost.ToString();
+        CostText.text = EnemyCost.ToString();
         if(NowTurn == TurnType.Enemy && _currentTurn == _totalCost)
         {
             BeginTurn();
@@ -17,6 +17,7 @@ public class EnemyManager : GameManager
     {
         Debug.Log("エネミーターン開始");
         _totalCost++;
+        SetCost(Target.Enemy, _totalCost);
         int random = Random.Range(0, Storage.Storage.Count);
         var card = Instantiate((GameObject)Resources.Load("Character"), HandPosition);
         card.GetComponent<CardBase>().CardState = Storage.Storage[random];
