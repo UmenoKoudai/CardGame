@@ -34,7 +34,7 @@ public class LoadCardData : MonoBehaviour
                 _cardStorage.Storage.Clear();
                 foreach (var d in data.Data)
                 {
-                    var code = d.ImageCord;
+                    var code = d.ImageCode;
                     List<IAbility> ability = new List<IAbility>();
                     List<ICondition> condition = new List<ICondition>();
                     List<ITarget> target = new List<ITarget>();
@@ -101,7 +101,7 @@ class CardDataStorage
 class CardData
 {
     public string Name;
-    public string ImageCord;
+    public string ImageCode;
     public string CardType;
     public int Cost;
     public int Attack;
