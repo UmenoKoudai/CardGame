@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class EnemyManager : GameManager
 {
+    FieldData _fieldData;
     int _totalCost = 0;
     int _currentTurn = 0;
+    private void Start()
+    {
+        _fieldData = Set();
+    }
     void Update()
     {
-        CostText.text = EnemyCost.ToString();
         if(NowTurn == TurnType.Enemy && _currentTurn == _totalCost)
         {
             BeginTurn();
         }
+        CostText.text = _fieldData.EnemyCost.ToString();
     }
 
     public void BeginTurn()

@@ -15,7 +15,13 @@ public class CardState
     [SerializeField] int _defense;
 
     [SerializeField, SerializeReference, SubclassSelector]
-    List<IAbility> _ability = new List<IAbility>();
+    List<IAbility> _summonAbility = new List<IAbility>();
+
+    [SerializeField, SerializeReference, SubclassSelector]
+    List<IAbility> _triggerAbility = new List<IAbility>();
+
+    [SerializeField, SerializeReference, SubclassSelector]
+    List<IAbility> _attackAbility = new List<IAbility>();
 
     [SerializeField, SerializeReference, SubclassSelector]
     List<ICondition> _condition = new List<ICondition>();
@@ -29,11 +35,13 @@ public class CardState
     public int Attack => _attack;
     public int Defense => _defense;
     public string CardName => _cardName;
-    public List<IAbility> Ability { get => _ability; set => _ability = value; }
+    public List<IAbility> SummonAbility { get => _summonAbility; set => _summonAbility = value; }
+    public List<IAbility> TriggerAbility { get => _triggerAbility; set => _triggerAbility = value; }
+    public List<IAbility> AttackAbility { get => _attackAbility; set => _attackAbility = value; }
     public List<ICondition> Condition { get => _condition; set => _condition = value; }
     public List<ITarget> Target { get => _target; set => _target = value; }
 
-    public CardState(string name, int cost, int attack, int defense, Sprite cardImage, CardType type, List<IAbility> ability, List<ICondition> condition, List<ITarget> target)
+    public CardState(string name, int cost, int attack, int defense, Sprite cardImage, CardType type, List<IAbility> summonAbility, List<IAbility> triggerAbility, List<IAbility> attackAbility, List<ICondition> condition, List<ITarget> target)
     {
         _cardName = name;
         _attack = attack;
@@ -41,7 +49,9 @@ public class CardState
         _cost = cost;
         _cardImage = cardImage;
         _cardType = type;
-        _ability = ability;
+        _summonAbility = summonAbility;
+        _triggerAbility = triggerAbility;
+        _attackAbility = attackAbility;
         _condition = condition;
         _target = target;
     }

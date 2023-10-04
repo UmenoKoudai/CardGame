@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 836941793}
   m_Layer: 5
   m_Name: Hand
-  m_TagString: Untagged
+  m_TagString: PlayerHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -922,7 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79315f3efac1024f85d2c0e0fea6c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://script.google.com/macros/s/AKfycbz9NhtsEtkdfaS6wi4QS4UFvKThAhx_hAeT2LwoE0hiBb9z9Phqx0tOo2fApdextrLo/exec
+  url: https://script.google.com/macros/s/AKfycbzXLsK20KyUpUITpU3lytLAqnDvlh00eY08dBBSbb_n6O3hgyyXNJfBIJVI08kc6Q_E/exec
   _cardStorage: {fileID: 11400000, guid: 0d13b056ccfc690418220a5e2c79f761, type: 2}
 --- !u!4 &980728028
 Transform:
@@ -1519,7 +1519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

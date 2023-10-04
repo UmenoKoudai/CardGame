@@ -11,34 +11,36 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
     CardPlace _place = CardPlace.Hand;
     CardState _myState;
     GameObject _playerField;
+    FanLayoutGroup _playerHand;
     GameManager _gameManager;
     CardType _type;
     int _attack;
     int _defense = 1;
     int _cost;
     int _playerTotalCost;
-    Transform _handPosition;
 
     public int Attack { get => _attack; set => _attack = value; }
     public int Defense { get => _defense; set => _defense = value; }
     public int Cost { get => _cost; set => _cost = value; }
     public int PlayerTotalCost => _playerTotalCost;
     public CardType Type => _type; 
+    public CardPlace Place => _place;
 
-    private void Start()
+    public void Start()
     {
+        _playerHand = GetComponentInParent<FanLayoutGroup>();
         _gameManager = FindObjectOfType<GameManager>();
         _attack = _myState.Attack;
         _defense = _myState.Defense;
         _cost = _myState.Cost;
         _type = _myState.Type;
-        _handPosition = GetComponentInParent<Transform>();
     }
-    private void Update()
+
+    public void Update()
     {
         if(_place == CardPlace.Field)
         {
-            PlayAbility();
+            PlayAbility(_myState.TriggerAbility);
         }
     }
     public CardState CardState { get => _myState; set => _myState = value; }
@@ -46,12 +48,12 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;
-        _playerField = GetField(eventData);
+        _playerField = GetField(eventData, "PlayerField");
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        //Debug.Log("カード選択中");
+       // _playerHand = GetField(eventData, "PlayerHand");
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -59,14 +61,19 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
         if(_playerField)
         {
             var data = Set();
+            _place = CardPlace.Field;
             data.PlayerField.Add(this);
             data.PlayerHand.Remove(this);
             transform.SetParent(_playerField.transform);
-            PlayAbility();
+            PlayAbility(_myState.SummonAbility);
+        }
+        else
+        {
+            transform.SetParent(_playerHand.transform);
         }
     }
 
-    GameObject GetField(PointerEventData eventData)
+    GameObject GetField(PointerEventData eventData, string fieldName)
     {
         var results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventData, results);
@@ -74,7 +81,7 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
         RaycastResult result = default;
         foreach(var r in results)
         {
-            if(r.gameObject.tag == "PlayerField")
+            if(r.gameObject.tag == fieldName)
             {
                 result = r;
             }
@@ -82,40 +89,47 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
         return result.gameObject;
     }
 
-    public void PlayAbility()
+    public void PlayAbility(List<IAbility> useAbility)
     {
-        var data = Set();
-        _myState.Target.ForEach(x => x.SetTarget(data));
-        if (GameManager.Instance.NowTurn == GameManager.TurnType.Player && PlayerCost >= _cost)
+        if (useAbility != null)
         {
-            if (_myState.Condition.All(x => x.Check(data)))
+            var data = Set();
+            _myState.Target.ForEach(x => x.SetTarget(data));
+            if (GameManager.Instance.NowTurn == GameManager.TurnType.Player)
             {
-                _myState.Ability.ForEach(x => x.Use(data));
-                PlayerCost -= _cost;
+                if (data.PlayerCost >= _cost)
+                {
+                    Debug.Log("カード使用");
+                    if (_myState.Condition.All(x => x.Check(data)))
+                    {
+                        useAbility.ForEach(x => x.Use(data));
+                        data.PlayerCost -= _cost;
+                    }
+                    transform.SetParent(_playerField.transform);
+                }
+                else
+                {
+                    Debug.Log("コストが足りない");
+                    transform.SetParent(_playerHand.transform);
+                }
             }
-        }
-        else
-        {
-            Debug.Log("コストが足りない");
-            transform.SetParent(_handPosition);
-        }
-        if (GameManager.Instance.NowTurn == GameManager.TurnType.Enemy && EnemyCost >= _cost)
-        {
-            if (_myState.Condition.All(x => x.Check(data)))
+            else if (GameManager.Instance.NowTurn == GameManager.TurnType.Enemy)
             {
-                _myState.Ability.ForEach(x => x.Use(data));
-                EnemyCost -= _cost;
+                if (data.EnemyCost >= _cost)
+                {
+                    if (_myState.Condition.All(x => x.Check(data)))
+                    {
+                        useAbility.ForEach(x => x.Use(data));
+                        data.EnemyCost -= _cost;
+                    }
+                    transform.SetParent(_playerField.transform);
+                }
+                else
+                {
+                    Debug.Log("コストが足りない");
+                    transform.SetParent(_playerHand.transform);
+                }
             }
-        }
-        else
-        {
-            Debug.Log("コストが足りない");
-            transform.SetParent(_handPosition);
-        }
-        if (_myState.Condition.All(x => x.Check(data)))
-        {
-            _myState.Ability.ForEach(x => x.Use(data));
-            EnemyCost -= _cost;
         }
     }
     public enum CardPlace

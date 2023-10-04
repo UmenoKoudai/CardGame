@@ -2,16 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Networking;
 using static ICardType;
 
 public class LoadCardData : MonoBehaviour
 {
-    [SerializeField] string url = "";
+    [ContextMenuItem("Setup", "Setup")]
+    [SerializeField]string url = "";
     [SerializeField] CardStorage _cardStorage;
 
-    private void OnValidate()
+    public void Setup()
     {
         StartCoroutine(LoadData());
     }
@@ -35,16 +37,32 @@ public class LoadCardData : MonoBehaviour
                 foreach (var d in data.Data)
                 {
                     var code = d.ImageCode;
-                    List<IAbility> ability = new List<IAbility>();
+                    List<IAbility> summonAbility = new List<IAbility>();
+                    List<IAbility> triggerAbility = new List<IAbility>();
+                    List<IAbility> attackAbility = new List<IAbility>();
                     List<ICondition> condition = new List<ICondition>();
                     List<ITarget> target = new List<ITarget>();
                     CardType cardType = d.CardType == "Character" ? CardType.Character : CardType.Spell;
                     Sprite cardImage = Resources.Load<Sprite>(code);
-                    foreach (var a in d.Ability)
+                    foreach (var a in d.SummonAbility)
                     {
                         if (a == (int)AbilityID.Test)
                         {
-                            ability.Add(new TestAbility());
+                            summonAbility.Add(new TestAbility());
+                        }
+                    }
+                    foreach (var a in d.TriggerAbility)
+                    {
+                        if (a == (int)AbilityID.Test)
+                        {
+                            triggerAbility.Add(new TestAbility());
+                        }
+                    }
+                    foreach (var a in d.AttackAbility)
+                    {
+                        if (a == (int)AbilityID.Test)
+                        {
+                            attackAbility.Add(new TestAbility());
                         }
                     }
                     foreach (var c in d.Condition)
@@ -61,7 +79,7 @@ public class LoadCardData : MonoBehaviour
                             target.Add(new PlayerFieldTarget());
                         }
                     }
-                    _cardStorage.Storage.Add(new CardState(d.Name, d.Cost, d.Attack, d.Defense, cardImage, cardType, ability, condition, target));
+                    _cardStorage.Storage.Add(new CardState(d.Name, d.Cost, d.Attack, d.Defense, cardImage, cardType, summonAbility, triggerAbility, attackAbility, condition, target));
                 }
             }
         }
@@ -74,12 +92,10 @@ enum AbilityID
     Test = 1,
     Damage,
 }
-
 enum ConditionID
 {
     Test = 1,
 }
-
 enum TargetID
 {
     Test = 1,
@@ -90,13 +106,11 @@ enum TargetID
     All,
     Random,
 }
-
 [Serializable]
 class CardDataStorage
 {
     public CardData[] Data;
 }
-
 [Serializable]
 class CardData
 {
@@ -106,7 +120,9 @@ class CardData
     public int Cost;
     public int Attack;
     public int Defense;
-    public int[] Ability;
+    public int[] SummonAbility;
+    public int[] TriggerAbility;
+    public int[] AttackAbility;
     public int[] Condition;
     public int[] Target;
 }

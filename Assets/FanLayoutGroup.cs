@@ -13,6 +13,7 @@ public class FanLayoutGroup : FieldData
     float _cardPosition;
     float _cardSpace;
     int _center;
+    int _nowHandNum;
     bool _isShow = false;
 
     private void Start()
@@ -21,6 +22,14 @@ public class FanLayoutGroup : FieldData
         _rectTransform = GetComponent<RectTransform>();
         CardSetting();
         _basePosition = new Vector3(_base.position.x, _base.position.y, _base.position.z);
+    }
+    private void Update()
+    {
+        if(_nowHandNum < transform.childCount || _nowHandNum > transform.childCount)
+        {
+            CardSetting();
+        }
+        _nowHandNum = transform.childCount;
     }
 
     public void CardSetting()
