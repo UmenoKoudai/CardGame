@@ -21,7 +21,7 @@ public class CardState
     List<IAbility> _triggerAbility = new List<IAbility>();
 
     [SerializeField, SerializeReference, SubclassSelector]
-    List<IAbility> _attackAbility = new List<IAbility>();
+    List<IAbility> _destroyAbility = new List<IAbility>();
 
     [SerializeField, SerializeReference, SubclassSelector]
     List<ICondition> _condition = new List<ICondition>();
@@ -37,11 +37,11 @@ public class CardState
     public string CardName => _cardName;
     public List<IAbility> SummonAbility { get => _summonAbility; set => _summonAbility = value; }
     public List<IAbility> TriggerAbility { get => _triggerAbility; set => _triggerAbility = value; }
-    public List<IAbility> AttackAbility { get => _attackAbility; set => _attackAbility = value; }
+    public List<IAbility> DestroyAbility { get => _destroyAbility; set => _destroyAbility = value; }
     public List<ICondition> Condition { get => _condition; set => _condition = value; }
     public List<ITarget> Target { get => _target; set => _target = value; }
 
-    public CardState(string name, int cost, int attack, int defense, Sprite cardImage, CardType type, List<IAbility> summonAbility, List<IAbility> triggerAbility, List<IAbility> attackAbility, List<ICondition> condition, List<ITarget> target)
+    public CardState(string name, int cost, int attack, int defense, Sprite cardImage, CardType type, List<IAbility> summonAbility, List<IAbility> triggerAbility, List<IAbility> destroyAbilit, List<ICondition> condition, List<ITarget> target)
     {
         _cardName = name;
         _attack = attack;
@@ -51,7 +51,7 @@ public class CardState
         _cardType = type;
         _summonAbility = summonAbility;
         _triggerAbility = triggerAbility;
-        _attackAbility = attackAbility;
+        _destroyAbility = destroyAbilit;
         _condition = condition;
         _target = target;
     }

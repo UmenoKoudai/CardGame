@@ -26,6 +26,11 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
     public CardType Type => _type; 
     public CardPlace Place => _place;
 
+    private void OnEnable()
+    {
+        var subject = GetComponent<FinishSubject>();
+        subject.OnFinished += OnFinished;
+    }
     public void Start()
     {
         _playerHand = GetComponentInParent<FanLayoutGroup>();
@@ -131,6 +136,10 @@ public abstract class CardBase : FieldData, IDragHandler, IPointerUpHandler, IPo
                 }
             }
         }
+    }
+    public void OnFinished()
+    {
+        PlayAbility(_myState.DestroyAbility);
     }
     public enum CardPlace
     {
