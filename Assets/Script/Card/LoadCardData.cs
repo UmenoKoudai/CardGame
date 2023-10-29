@@ -50,12 +50,20 @@ public class LoadCardData : MonoBehaviour
                         {
                             summonAbility.Add(new TestAbility());
                         }
+                        else if (a == (int)AbilityID.Damage)
+                        {
+                            summonAbility.Add(new DamageAbility());
+                        }
                     }
                     foreach (var a in d.TriggerAbility)
                     {
                         if (a == (int)AbilityID.Test)
                         {
                             triggerAbility.Add(new TestAbility());
+                        }
+                        else if(a == (int)AbilityID.Damage)
+                        {
+                            triggerAbility.Add(new DamageAbility());
                         }
                     }
                     foreach (var a in d.DestroyAbility)
@@ -76,7 +84,7 @@ public class LoadCardData : MonoBehaviour
                     {
                         if (t == (int)TargetID.Test)
                         {
-                            target.Add(new PlayerFieldTarget());
+                            target.Add(new PlayerHandTarget());
                         }
                     }
                     _cardStorage.Storage.Add(new CardState(d.Name, d.Cost, d.Attack, d.Defense, cardImage, cardType, summonAbility, triggerAbility, destroyAbility, condition, target));

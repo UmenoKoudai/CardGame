@@ -18,116 +18,24 @@ MonoBehaviour:
     _cardImage: {fileID: 21300000, guid: 7aa62b78aa9f91c48b5295e3baa4d2ec, type: 3}
     _cost: 1
     _attack: 11
-    _defense: 1
+    _defense: 2
     _summonAbility:
-    - rid: 6453133895682490368
+    - rid: 6453134187439325266
     _triggerAbility: []
-    _attackAbility: []
+    _destroyAbility: []
     _condition:
-    - rid: 6453133893808685057
+    - rid: 6453134187439325267
     _target:
-    - rid: 6453133893808685058
-    - rid: 6453133895682490369
-  - _cardName: "\u4E03\u702C"
-    _cardType: 0
-    _cardImage: {fileID: 21300000, guid: 57dab926e9fce9b4dbfa33cdc8b3b12b, type: 3}
-    _cost: 0
-    _attack: 1
-    _defense: 11
-    _summonAbility:
-    - rid: 6453133895682490370
-    _triggerAbility: []
-    _attackAbility: []
-    _condition:
-    - rid: 6453133893808685060
-    _target:
-    - rid: 6453133895682490371
-    - rid: 6453133895682490372
-  - _cardName: "\u5C71\u5439"
-    _cardType: 1
-    _cardImage: {fileID: 21300000, guid: 2cbd7f7de84c6764593062d8ee7e30dc, type: 3}
-    _cost: 0
-    _attack: 0
-    _defense: 0
-    _summonAbility:
-    - rid: 6453133893808685062
-    _triggerAbility:
-    - rid: 6453133893808685063
-    _attackAbility:
-    - rid: 6453133893808685064
-    _condition:
-    - rid: 6453133893808685065
-    _target:
-    - rid: 6453133893808685066
-  - _cardName: "\u5FA1\u4F3D"
-    _cardType: 1
-    _cardImage: {fileID: 21300000, guid: ab1c83c1d4262d241a45dad4cc5c8246, type: 3}
-    _cost: 1
-    _attack: 0
-    _defense: 0
-    _summonAbility:
-    - rid: 6453133893808685067
-    _triggerAbility:
-    - rid: 6453133893808685068
-    _attackAbility:
-    - rid: 6453133893808685069
-    _condition:
-    - rid: 6453133893808685070
-    _target:
-    - rid: 6453133893808685071
+    - rid: 6453134187439325268
   _handCount: 3
   references:
     version: 2
     RefIds:
-    - rid: 6453133893808685057
-      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685058
-      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685060
-      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685062
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685063
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685064
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685065
-      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685066
-      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685067
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685068
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685069
-      type: {class: TestAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _debug: 
-    - rid: 6453133893808685070
-      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
-    - rid: 6453133893808685071
-      type: {class: PlayerFieldTarget, ns: , asm: Assembly-CSharp}
-    - rid: 6453133895682490368
+    - rid: 6453134187439325266
       type: {class: DamageAbility, ns: , asm: Assembly-CSharp}
       data:
-        _damage: 0
-    - rid: 6453133895682490369
-      type: {class: AllTarget, ns: , asm: Assembly-CSharp}
-    - rid: 6453133895682490370
-      type: {class: DamageAbility, ns: , asm: Assembly-CSharp}
-      data:
-        _damage: 0
-    - rid: 6453133895682490371
-      type: {class: EnemyFieldTarget, ns: , asm: Assembly-CSharp}
-    - rid: 6453133895682490372
-      type: {class: AllTarget, ns: , asm: Assembly-CSharp}
+        _damage: 1
+    - rid: 6453134187439325267
+      type: {class: TestCondition, ns: , asm: Assembly-CSharp}
+    - rid: 6453134187439325268
+      type: {class: PlayerHandTarget, ns: , asm: Assembly-CSharp}

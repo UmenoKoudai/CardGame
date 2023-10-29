@@ -37,7 +37,7 @@ public class Character : CardBase
         if (Place == CardPlace.Field)
         {
             Debug.Log($"{CardState.CardName}はフィールドにいる");
-            PlayAbility(CardState.TriggerAbility);
+            //PlayAbility(CardState.TriggerAbility);
         }
     }
 
